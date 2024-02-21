@@ -1,0 +1,91 @@
+#movieCard {
+    width: 280px;
+    height: 400px;  
+    margin: 0px auto 0 auto;
+    box-shadow: 15px 15px 15px -14px black;
+    border-radius: 5px;
+    position: relative;    
+    overflow:hidden;
+    flex-shrink: 0; 
+  }
+  
+  
+#movieCard .movie-image {
+    width: 100%;    
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 5px;
+    transition: filter 0.3s ease-in-out;
+    
+  }  
+  #movieCard:hover .movie-image {
+    filter: blur(4px);
+    transition: filter 0.5s ease-in-out;   
+  } 
+  .movie-card:last-child:hover {
+     transform: none;
+  }
+#movieCard .movie-details {
+    position: absolute;
+    bottom: 0;
+    left: -1px;
+    padding: 20px;
+    width: 102%;
+    border-radius: 0 0 0px 0px;
+    background: rgba(30, 27, 38, 0.95); 
+    transform: translateY(100%); 
+    transition: transform 0.5s ease-in-out;
+  }
+  #movieCard:hover .movie-details {
+    transform: translateY(0); 
+  }
+
+  /* #movieCard:last-child:hover .movie-details{
+    transform: translateY(100%);
+  }
+
+  #movieCard:last-child{
+    width: 50px;
+  } */
+#movieCard .movie-title {
+    color: #e7e7e7;
+    font-size: 20px;
+    margin-top: 0;
+  }
+  
+  #movieCard .movie-details,
+#movieCard .movie-image {
+  will-change: transform, filter;
+}
+#movieCard .movie-genre {
+    color: #e7e7e7;
+    font-size: 14px;
+    margin-top: 5px;
+    border: 1px solid #e7e7e7;
+    width: fit-content;
+    padding: 3px 6px;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.1);
+  }
+  
+  
+#movieCard .star {
+    font-size: 24px;
+    color: #ccc;
+  }
+  
+#movieCard .star.filled {
+    color: #ffc107;
+  }  
+  
+#movieCard .movie-description {
+    color: #818181;
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+ 
+

@@ -1,23 +1,18 @@
 #addMovie{
-    position: relative;
-    width: 350px;
-    margin: 0 auto;
+    position: relative;   
+    margin: 20px auto;
 }
 
 #addMovie form{  
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 350px;
-    margin:0 auto;
-    border: 1px solid #ccc; 
-    padding: 20px;
-    border-radius: 5px;
-    background-color: #193542;
+    align-items: center; 
+    margin:0 auto;   
+    padding: 20px 40px;
+    border-radius: 5px;    
 }
 
-#addMovie label {
-  
+#addMovie label {  
     width: 100%;
     display: block;
     margin-bottom: 10px;
@@ -29,7 +24,7 @@
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc; 
-    background-color: rgba(255, 255, 255, 0.2); 
+    background-color: rgba(255, 255, 255, 0.1); 
     color: white; 
     margin-top: 5px;
   }
@@ -41,7 +36,7 @@
     border-radius: 5px;
     margin-top: 5px;
     appearance: none;
-    background: linear-gradient(to right, #2c6e8a 0%, #2ea0d1 var(--thumb-position), #ccc var(--thumb-position), #ccc 100%);
+    background: linear-gradient(to right, #b1b1b1 0%, #ffffff var(--thumb-position), #ccc var(--thumb-position), #ccc 100%);
   }
   
   #addMovie input[type="range"]:focus {
@@ -59,7 +54,7 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #ccc; 
+    background: #ffffff; 
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -6px; /* Adjust vertical alignment */
@@ -77,19 +72,16 @@
     border-radius: 5px;
     border: 1px solid #ccc;   
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.2); 
+    background-color: rgba(255, 255, 255, 0.1); 
   }
   
-  #addMovie select option {
-    -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: rgb(48, 48, 48);
+  #addMovie select option { 
+      background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(48, 48, 48);    
   }
   
   #addMovie option:hover {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   #addMovie textarea {
@@ -98,14 +90,13 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
     color: white;
     font-family: Arial, sans-serif;
     resize:none; 
   }
   
-  #addMovie textarea:focus {
-    outline: none;
+  #addMovie textarea:focus {    
     border-color: rgb(255, 255, 255);
   }
   #addMovie textarea::-webkit-scrollbar {
@@ -137,12 +128,4 @@
   
   #addMovie button:hover {
     background-color: rgba(255, 255, 255, 0.4); 
-  }
-
-  #addMovie #minimizeButton {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 10px;
-    padding: 10px;    
   }

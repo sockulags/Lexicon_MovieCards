@@ -11,12 +11,6 @@ const AddMovie: React.FC = () => {
     description: "",
   });
 
-  const [isFormVisible, setIsFormVisible] = useState(true);
-
-  const toggleFormVisibility = () => {
-    setIsFormVisible((prevVisibility) => !prevVisibility);
-  };
-
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
@@ -61,8 +55,7 @@ const AddMovie: React.FC = () => {
   };
 
   return (
-    <div id="addMovie" className={isFormVisible ? "" : "minimized"}>
-      {isFormVisible && (
+    <div id="addMovie">      
         <form onSubmit={handleSubmit}>
           <h2>Add Movie</h2>
           <label>
@@ -115,11 +108,7 @@ const AddMovie: React.FC = () => {
             />
           </label>
           <button type="submit">Add Movie</button>
-        </form>
-      )}
-      <button id="minimizeButton" onClick={toggleFormVisibility}>
-        {isFormVisible ? "-" : "Add Movie"}
-      </button>
+        </form>         
     </div>
   );
 };
