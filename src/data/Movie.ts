@@ -77,6 +77,20 @@ export const movies: IMovie[] = [
         "image": "https://www.movieposters.com/cdn/shop/products/b5282f72126e4919911509e034a61f66_6ce2486d-e0da-4b7a-9148-722cdde610b8_480x.progressive.jpg?v=1573616025",
         "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."
       },
+      {
+        "description" :"A behind-the-scenes look at the annual Penguin World Surfing Championship, and its newest participant, up-and-comer Cody Maverick.",
+"genre": "Action",
+"image": "https://www.movieposters.com/cdn/shop/files/surfs_up_ver6_40e968d3-38ae-4e11-9be9-3ada12f735e0_480x.progressive.jpg?v=1708097916",
+"rating": 1,
+"title": "Surf’s Up"
+      },
+      {
+        "description": "Corporal Joe Bauers, a decisively average American, is selected as a guinea pig for a top-secret hibernation program but is forgotten, awakening to a future so incredibly moronic he's easily the most intelligent person alive.",
+        "genre": "Comedy",
+        "rating": 2.8,
+        "title": "Idiocracy",
+        "image": "https://www.movieposters.com/cdn/shop/files/idiocracy.24x36_480x.progressive.jpg?v=1708527555",
+      }
 ];
 
 export const genres: string[] = [
