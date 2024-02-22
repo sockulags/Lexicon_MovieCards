@@ -14,8 +14,7 @@ export function App() {
       const storedMovies: IMovie[] = storedMoviesJSON ? JSON.parse(storedMoviesJSON) : [];
       const combinedMovies: IMovie[] = storedMovies.concat(initialMovies)
         .filter((movie, index, array) => index === array.findIndex(m => m.title === movie.title));
-      setAllMovies(combinedMovies);
-      console.log(combinedMovies)
+      setAllMovies(combinedMovies);  
     };
 
     loadMovies();
