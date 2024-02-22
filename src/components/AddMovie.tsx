@@ -1,8 +1,13 @@
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import  { useState, ChangeEvent, FormEvent } from "react";
 import "./AddMovie.css";
 import { IMovie, genres } from "../data/Movie";
+import placeHolder from "../assets/placeholder.png";
 
-const AddMovie: React.FC = () => {
+interface AddMovieProps {
+  onAddNewMovie: (newMovie: IMovie) => void;
+}
+
+const AddMovie: React.FC<AddMovieProps> = ({ onAddNewMovie }) => {
   const [movie, setMovie] = useState<IMovie>({
     title: "",
     rating: 1,
@@ -26,9 +31,19 @@ const AddMovie: React.FC = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (movie.title.trim() && movie.description.trim()) {
-      console.log(movie);
-      alert(JSON.stringify(movie));
-      generateAndDownloadJSON(movie);
+  
+      const updatedMovie = {
+        ...movie,
+        image: movie.image.trim() ? movie.image : placeHolder,
+      };
+
+      const existingMoviesJSON = localStorage.getItem("movies");
+      const existingMovies: IMovie[] = existingMoviesJSON ? JSON.parse(existingMoviesJSON) : [];
+      const updatedMovies = [...existingMovies, movie];
+      localStorage.setItem("movies", JSON.stringify(updatedMovies));
+      
+      onAddNewMovie(updatedMovie);
+
       setMovie({
         title: "",
         rating: 1,
@@ -41,18 +56,6 @@ const AddMovie: React.FC = () => {
     }
   };
 
-  const generateAndDownloadJSON = (movie: IMovie) => {
-    const data = JSON.stringify([movie]);
-    const blob = new Blob([data], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "movies.json";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  };
 
   return (
     <div id="addMovie">      
@@ -85,6 +88,7 @@ const AddMovie: React.FC = () => {
             <input
               type="text"
               name="image"
+              placeholder="Optional"
               value={movie.image}
               onChange={handleChange}
             />
@@ -104,7 +108,7 @@ const AddMovie: React.FC = () => {
             <textarea
               name="description"
               value={movie.description}
-              onChange={handleChange}
+              onChange={handleChange}              
             />
           </label>
           <button type="submit">Add Movie</button>

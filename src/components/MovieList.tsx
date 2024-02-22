@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import MovieCard from './MovieCard';
-import { IMovie } from '../data/Movie'; // Assuming you have IMovie interface defined in 'types.ts'
+import { IMovie } from '../data/Movie'; 
 import "./MovieList.css";
 
 interface MovieListProps {
@@ -23,17 +23,15 @@ const MovieList: React.FC<MovieListProps> = ({ movies }) => {
     container.addEventListener('scroll', checkScroll);
     return () => container.removeEventListener('scroll', checkScroll);
   }, [movies]); 
-
-  // Typed event handler for scrolling
+ 
   const scrollMovies = (direction: 'previous' | 'next') => {
     const container = document.querySelector('.movie-card-list') as HTMLElement;
-    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0); // Get viewport width
-    const cardWidth = 330; // Width of each card
-    const cardsInView = Math.floor(vw / cardWidth); // Number of cards visible in the viewport
-    const scrollAmount = cardsInView * cardWidth; // Calculate scroll distance based on the number of cards
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0); 
+    const cardWidth = 330; 
+    const cardsInView = vw / cardWidth; 
+    const scrollAmount = cardsInView * cardWidth; 
     const currentScroll = container.scrollLeft;
-    container.scrollTo({
-      top: 0,
+    container.scrollTo({     
       left: direction === 'next' ? currentScroll + scrollAmount : currentScroll - scrollAmount,
       behavior: 'smooth'
     });

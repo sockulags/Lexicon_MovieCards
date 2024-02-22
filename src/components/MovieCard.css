@@ -42,13 +42,6 @@
     transform: translateY(0); 
   }
 
-  /* #movieCard:last-child:hover .movie-details{
-    transform: translateY(100%);
-  }
-
-  #movieCard:last-child{
-    width: 50px;
-  } */
 #movieCard .movie-title {
     color: #e7e7e7;
     font-size: 20px;

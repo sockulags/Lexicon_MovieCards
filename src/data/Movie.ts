@@ -39,7 +39,7 @@ export const movies: IMovie[] = [
         "title": "Harry Potter and the Deathly Hallows: Part One",
         "rating": 5,
         "genre": "Fantasy",
-        "image": "https://www.movieposters.com/cdn/shop/files/9c0a783505db76a3e8f709112839fb87_e9044fcb-0df0-4fbf-8f24-aa43972460e1_480x.progressive.jpg?v=1707245330",
+        "image": "https://www.movieposters.com/cdn/shop/files/9c0a783505db76a3e8f709112839fb87_e9044fcb-0df0-4fbf-8f24-aa43972460e1_480x.progressive.jpg?",
         "description": "As Harry, Ron and Hermione race against time and evil to destroy the Horcruxes, they uncover the existence of the three most powerful objects in the wizarding world: the Deathly Hallows."
       },
       {
